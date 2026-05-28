@@ -1,0 +1,71 @@
+.card {
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.imageContainer {
+  aspect-ratio: 16 / 9;
+  background-color: var(--surface-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    var(--surface-strong),
+    var(--surface-soft)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagePlaceholderText {
+  color: var(--foreground-40);
+  font-size: 0.875rem;
+}
+
+.year {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: color-mix(in srgb, var(--background) 90%, transparent);
+  color: var(--foreground);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.category {
+  font-size: 0.875rem;
+  color: var(--foreground-60);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
