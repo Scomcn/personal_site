@@ -510,13 +510,43 @@ a.card:focus-visible {
 }
 
 @media (max-width: 639px) {
+	.track {
+		left: 1.375rem;
+		transform: translateX(-50%);
+	}
+
 	.yearGroup {
-		grid-template-columns: minmax(0, 1fr) 2.75rem minmax(0, 1fr);
+		grid-template-columns: 2.75rem minmax(0, 1fr);
 		column-gap: 0.75rem;
+		min-width: 0;
+	}
+
+	.yearMarker {
+		grid-column: 1;
+	}
+
+	.yearItems {
+		display: flex;
+		flex-direction: column;
+		grid-column: 2;
+		gap: 1.5rem;
+		min-width: 0;
 	}
 
 	.item {
 		max-width: none;
+		grid-row: auto !important;
+	}
+
+	.itemLeft,
+	.itemRight {
+		justify-self: stretch;
+	}
+
+	.itemLeft .connector,
+	.itemRight .connector {
+		left: -1.5rem;
+		right: auto;
 	}
 
 	.yearLabel {
