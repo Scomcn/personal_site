@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scott McNicol — Personal Site
 
-## Getting Started
+Portfolio site for Scott McNicol, a senior frontend engineer. It introduces my work, links to GitHub and LinkedIn, offers a CV download, and showcases my skills and career history.
 
-First, run the development server:
+## Stack
+
+- **[Next.js 16](https://nextjs.org/)** (App Router) with **[React 19](https://react.dev/)** and **[TypeScript](https://www.typescriptlang.org/)**
+- **[SCSS modules](https://sass-lang.com/)** for component styling
+- **[Tailwind CSS 4](https://tailwindcss.com/)** for global utilities and design tokens
+- **[simple-icons](https://simple-icons.org/)** for technology logos in the stack ticker
+- **[Inter](https://fonts.google.com/specimen/Inter)** via `next/font`
+
+## Getting started
+
+Requires Node.js 20+.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run build` | Create a production build    |
+| `npm run start` | Serve the production build   |
+| `npm run lint`  | Run ESLint                   |
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/           # Next.js routes and page-level styles
+├── components/    # UI components (Timeline, TechTicker, ShaderBackground, …)
+├── data/          # Static content (timeline entries, tech stack, social links)
+└── styles/        # Shared SCSS utilities
+public/            # Static assets (logos, CV)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Content such as timeline entries and social links lives in `src/data/` — edit those files to update copy without touching component logic.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The site is a standard Next.js application and deploys cleanly to [Vercel](https://vercel.com):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push the repository to GitHub.
+2. Import the project in Vercel and connect the repo.
+3. Use the default settings — **Framework Preset: Next.js**, build command `npm run build`, output handled automatically.
+4. Vercel will build and deploy on every push to the production branch.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For other hosts, run `npm run build` and serve with `npm run start`, or follow the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
